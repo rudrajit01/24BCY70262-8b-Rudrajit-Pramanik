@@ -7,6 +7,10 @@ app.use(cors());
 app.use(express.json()); // body-parser এর替代
 
 const SECRET_KEY = 'your_secret_key_here';
+// রুট পাথ হ্যান্ডলার
+app.get('/', (req, res) => {
+  res.send('JWT Protected Routes Server is running. Use POST /api/login to authenticate and GET /api/protected for protected data.');
+});
 
 // লগইন এন্ডপয়েন্ট - পাসওয়ার্ড 'testpass' ব্যবহার করুন
 app.post('/api/login', (req, res) => {
